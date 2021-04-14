@@ -107,6 +107,7 @@
         frame.size.width = targetWidth;
         self.frame = frame;
     }
+    [self addDefaultGradientLayerWithSize:self.frame.size];
 }
 
 - (void)jx_selectedCell:(JXCategoryIndicatorParamsModel *)model {
