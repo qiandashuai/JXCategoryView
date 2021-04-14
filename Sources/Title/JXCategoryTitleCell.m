@@ -114,8 +114,8 @@
         } else {
             self.titleLabel.font = myCellModel.titleFont;
             self.maskTitleLabel.font = myCellModel.titleFont;
-            self.titleLabel.gradientStartColor =[UIColor colorWithRed:51.0f / 255.0f green:51.0f / 255.0f blue:51.0f / 255.0f alpha:1.0f];
-            self.titleLabel.gradientEndColor = [UIColor colorWithRed:51.0f / 255.0f green:51.0f / 255.0f blue:51.0f / 255.0f alpha:1.0f];
+            self.titleLabel.gradientStartColor =[UIColor colorWithRed:94.0f / 255.0f green:94.0f / 255.0f blue:94.0f / 255.0f alpha:1.0f];
+            self.titleLabel.gradientEndColor = [UIColor colorWithRed:94.0f / 255.0f green:94.0f / 255.0f blue:94.0f / 255.0f alpha:1.0f];
             self.titleLabel.gradientStartPoint = CGPointMake(0, 0.5);
             self.titleLabel.gradientEndPoint = CGPointMake(1, 0.5);
         }
