@@ -9,6 +9,7 @@
 #import "JXCategoryTitleCell.h"
 #import "JXCategoryTitleCellModel.h"
 #import "JXCategoryFactory.h"
+#import "JXLabel.h"
 
 @interface JXCategoryTitleCell ()
 @property (nonatomic, strong) CALayer *titleMaskLayer;
@@ -23,7 +24,7 @@
 
     self.isAccessibilityElement = true;
     self.accessibilityTraits = UIAccessibilityTraitButton;
-    _titleLabel = [[UILabel alloc] init];
+    _titleLabel = [[JXLabel alloc] init];
     self.titleLabel.clipsToBounds = YES;
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
     self.titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
@@ -106,9 +107,17 @@
         if (myCellModel.isSelected) {
             self.titleLabel.font = myCellModel.titleSelectedFont;
             self.maskTitleLabel.font = myCellModel.titleSelectedFont;
+            self.titleLabel.gradientStartColor =[UIColor colorWithRed:255.0f / 255.0f green:45.0f / 255.0f blue:0.0f / 255.0f alpha:1.0f];
+            self.titleLabel.gradientEndColor = [UIColor colorWithRed:255.0f / 255.0f green:155.0f / 255.0f blue:15.0f / 255.0f alpha:1.0f];
+            self.titleLabel.gradientStartPoint = CGPointMake(0, 0.5);
+            self.titleLabel.gradientEndPoint = CGPointMake(1, 0.5);
         } else {
             self.titleLabel.font = myCellModel.titleFont;
             self.maskTitleLabel.font = myCellModel.titleFont;
+            self.titleLabel.gradientStartColor =[UIColor colorWithRed:51.0f / 255.0f green:51.0f / 255.0f blue:51.0f / 255.0f alpha:1.0f];
+            self.titleLabel.gradientEndColor = [UIColor colorWithRed:51.0f / 255.0f green:51.0f / 255.0f blue:51.0f / 255.0f alpha:1.0f];
+            self.titleLabel.gradientStartPoint = CGPointMake(0, 0.5);
+            self.titleLabel.gradientEndPoint = CGPointMake(1, 0.5);
         }
     }
 

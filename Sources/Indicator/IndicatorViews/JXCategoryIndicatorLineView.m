@@ -197,6 +197,26 @@
     }else {
         self.frame = targetIndicatorFrame;
     }
+    [self addDefaultGradientLayerWithSize:self.frame.size];
 }
+
+- (void)addDefaultGradientLayerWithSize:(CGSize)size {
+    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+    gradientLayer.frame = CGRectMake(0, 0, size.width, size.height);
+
+    //  创建渐变色数组，需要转换为CGColor颜色
+    gradientLayer.colors = @[ (__bridge id)[UIColor colorWithRed:255.0f / 255.0f green:45.0f / 255.0f blue:0.0f / 255.0f alpha:1.0f].CGColor, (__bridge id)[UIColor colorWithRed:255.0f / 255.0f green:155.0f / 255.0f blue:15.0f / 255.0f alpha:1.0f].CGColor ];
+
+    //  设置渐变颜色方向，左上点为(0,0), 右下点为(1,1)
+    gradientLayer.startPoint = CGPointMake(0, 0.5);
+    gradientLayer.endPoint = CGPointMake(1, 0.5);
+
+    //  设置颜色变化点，取值范围 0.0~1.0
+    gradientLayer.locations = @[ @0, @1 ];
+
+    self.layer.masksToBounds = YES;
+    [self.layer insertSublayer:gradientLayer atIndex:0];
+}
+
 
 @end

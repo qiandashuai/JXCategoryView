@@ -8,11 +8,13 @@
 
 #import "JXCategoryIndicatorCell.h"
 #import "JXCategoryViewDefines.h"
+#import "JXLabel.h"
+
 @class JXCategoryTitleCellModel;
 
 @interface JXCategoryTitleCell : JXCategoryIndicatorCell
 
-@property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) JXLabel *titleLabel;
 @property (nonatomic, strong) UILabel *maskTitleLabel;
 @property (nonatomic, strong) NSLayoutConstraint *titleLabelCenterX;
 @property (nonatomic, strong) NSLayoutConstraint *titleLabelCenterY;
