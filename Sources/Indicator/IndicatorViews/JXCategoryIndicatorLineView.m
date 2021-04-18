@@ -54,6 +54,7 @@
         y = self.verticalMargin;
     }
     self.frame = CGRectMake(x, y, selectedLineWidth, [self indicatorHeightValue:model.selectedCellFrame]);
+    [self removeDefaultGradientLayer];
     [self addDefaultGradientLayerWithSize:self.frame.size];
 }
 
@@ -107,6 +108,7 @@
         frame.size.width = targetWidth;
         self.frame = frame;
     }
+    [self removeDefaultGradientLayer];
     [self addDefaultGradientLayerWithSize:self.frame.size];
 }
 
@@ -199,6 +201,7 @@
     }else {
         self.frame = targetIndicatorFrame;
     }
+    [self removeDefaultGradientLayer];
     [self addDefaultGradientLayerWithSize:self.frame.size];
 }
 
@@ -220,5 +223,10 @@
     [self.layer insertSublayer:gradientLayer atIndex:0];
 }
 
+- (void)removeDefaultGradientLayer {
+    if ([self.layer.sublayers[0] isKindOfClass:[CAGradientLayer class]]) {
+        [self.layer.sublayers[0] removeFromSuperlayer];
+    }
+}
 
 @end
